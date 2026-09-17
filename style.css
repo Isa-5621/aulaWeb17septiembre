@@ -1,3 +1,6 @@
+*{
+    font-family: arial black;
+}
 
 body{ 
     display: flex;
@@ -20,11 +23,15 @@ input{
     height: 40px;
 }
 button{
-    width: 80px;
-    padding: 10px;
+    padding: 10px 15px;
 }
 #buttons{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+}
+#result{
+    background-color: rgb(173, 162, 148);
+    padding: 5px 10px;
+    border-radius: 30%;
 }

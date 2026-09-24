@@ -21,51 +21,31 @@ console.log(obj.info())
 let condition = obj.age >18
 console.log(condition)
 
-/// SOMA ///
 
-function somar(){
 
-const numero1 = Number (document.getElementById('1').value)
-const numero2 = Number ( document.getElementById('2').value)
+
+function calculate(operation){
+   document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+const num1 = Number (document.getElementById('1').value)
+const num2 = Number ( document.getElementById('2').value)
 const resulttxt = document.getElementById('result')
+let result = 0
 
-   const c = numero1 + numero2
-   resulttxt.innerHTML = c
+if (operation === 'somar'){
+   result = num1 + num2
 }
-  ///RESTA///
-
-function restar(){
-
-const numero1 = Number (document.getElementById('1').value)
-const numero2 = Number ( document.getElementById('2').value)
-const resulttxt = document.getElementById('result')
-
-   const c = numero1 - numero2
-   resulttxt.innerHTML = c
+ else if (operation === 'restar'){
+   result = num1 - num2
 }
-
-   /// MULTIPLICAR ///
-
-function multiplicar(){
-
-const numero1 = Number (document.getElementById('1').value)
-const numero2 = Number ( document.getElementById('2').value)
-const resulttxt = document.getElementById('result')
-
-   const c = numero1 * numero2
-   resulttxt.innerHTML = c
+else if (operation === 'multiplicar'){
+   result = num1 * num2
 }
-
-   /// DIVIDIR ///
-
-function dividir(){
-
-const numero1 = Number (document.getElementById('1').value)
-const numero2 = Number ( document.getElementById('2').value)
-const resulttxt = document.getElementById('result')
-
-   const c = numero1 / numero2
-   resulttxt.innerHTML = c
+else if (operation === 'dividir'){
+   result = num1 / num2
 }
-
-
+   resulttxt.innerHTML = result
+   console.log(result)
+}
+ )}

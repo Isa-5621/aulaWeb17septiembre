@@ -1,28 +1,3 @@
-const obj ={
-    name: "John",
-    age: 25,
-    eyeColor: "blue",
-    gender: "male",
-    info: function(){
-        return this.name + " is " + this.age + "years old"
-    }
-}
-console.log(obj.name)
-obj.name = "mary"
-obj.gender = "female"
-console.log(obj)
-
-function display (a,b){
-    return a + ' is ' + b 
-}
-
-console.log(display(obj.name, obj.age))
-console.log(obj.info())
-let condition = obj.age >18
-console.log(condition)
-
-
-
 
 function calculate(operation){
    document.querySelector('form').addEventListener('submit', function(e) {
@@ -39,13 +14,19 @@ if (operation === 'somar'){
  else if (operation === 'restar'){
    result = num1 - num2
 }
-else if (operation === 'multiplicar'){
+ else if (operation === 'multiplicar'){
    result = num1 * num2
 }
-else if (operation === 'dividir'){
+ else if (operation === 'dividir'){
    result = num1 / num2
 }
    resulttxt.innerHTML = result
-   console.log(result)
+})
 }
- )}
+
+ ///////// Calculador 2.0
+
+ /* else if (!isNaN(operation)){
+  document.getElementById('1').value += operation
+  operation = undefined
+  console.log(operation) */

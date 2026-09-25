@@ -36,7 +36,8 @@ button{
 }
 #buttons{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+   /* grid-template-columns: repeat(4, 1fr);*/
+   grid-template: repeat(4, 1fr) / repeat(4, 1fr);
     gap: 10px;
 }
 #result{

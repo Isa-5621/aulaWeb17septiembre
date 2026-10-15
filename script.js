@@ -1,4 +1,6 @@
 
+import { evaluate } from 'math.js'
+
 function calculate(operation){
    document.querySelector('form').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -31,6 +33,6 @@ else if(operation === '.'){
 
 resulttxt.innerHTML = result
 })}
-
+console.log(evaluate('2.3 + 4.5'))
  ///////// Calculador 2.0
 

@@ -38,8 +38,3 @@ else if(operation === '.'){
 
 resulttxt.innerHTML = result
 })}
-
- ///////// Calculador 2.0
-
-
- 

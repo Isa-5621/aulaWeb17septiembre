@@ -46,3 +46,6 @@ button{
     border-radius: 30%;
     color: white;
 }
+#sqrt{
+    grid-column: span 2;
+}

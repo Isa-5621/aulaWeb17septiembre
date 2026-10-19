@@ -6,12 +6,16 @@ input.focus()
 function calculate(operation){
    document.querySelector('form').addEventListener('submit', (e) => {
    e.preventDefault();
-
+   if(values.includes(operation) && values.includes(input.value.charAt(input.value.length - 1))){
+      // Prevents to add a symbol twice through the buttons
+         operation = undefined
+         return 0;
+   }
    document.querySelector('input').addEventListener('beforeinput', (e) => {
 
       if(values.includes(e.data) && values.includes(input.value.charAt(input.value.length - 1))){
+         // Prevents to add a symbol twice through the input
          e.preventDefault()
-         console.log('includes')
       }
      if (isNaN(e.data) && !values.includes(e.data)) {
       e.preventDefault();

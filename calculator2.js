@@ -1,12 +1,19 @@
 
 const input = document.querySelector('input')
+let values =['+','-','.','*','/','openParen']
 input.focus()
+
 function calculate(operation){
-   document.querySelector('form').addEventListener('submit', function(e) {
-      e.preventDefault();
+   document.querySelector('form').addEventListener('submit', (e) => {
+   e.preventDefault();
+
    document.querySelector('input').addEventListener('beforeinput', (e) => {
-      const valid = ['/', '?']
-     if (isNaN(e.data) && !['+','-','.','*','/','openParen'].includes(e.data)) {
+
+      if(values.includes(e.data) && values.includes(input.value.charAt(input.value.length - 1))){
+         e.preventDefault()
+         console.log('includes')
+      }
+     if (isNaN(e.data) && !values.includes(e.data)) {
       e.preventDefault();
      }
    })
@@ -14,9 +21,10 @@ function calculate(operation){
 const num1 =  (document.getElementById('1').value)
 const resulttxt = document.getElementById('result')
 let result = 0
-let values 
+let equation = num1.split("")
 let start = input.selectionStart
 let end = input.selectionEnd
+
 
 if(operation === "openParen"){
    input.value = input.value.slice(0, start) + "()" + input.value.slice(end)

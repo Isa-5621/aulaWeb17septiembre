@@ -50,7 +50,23 @@ else if(operation === '.'){
   // eqution must be declared at the end of the function
 let equation = input.value.split("") 
 console.log(equation.join(""))
+
 if (operation === '=') {
+   let parenth = 0
+   for (let i=0; i < equation.length; i++){
+      if (equation[i] === '('){
+         parenth++
+      } else if (equation[i] === ')'){
+         parenth--
+      }
+      if (equation[i] === '√'){
+         equation[i] = 'Math.sqrt('
+      }
+      if (i === equation.lenght  && parenth === 0){
+         equation.push(')')
+      }
+   }
+   console.log(equation.join(""))
    result = eval(equation.join(""))
 }
 resulttxt.innerHTML = result

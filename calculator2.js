@@ -5,14 +5,14 @@ input.focus()
 function calculate(operation){
    document.querySelector('form').addEventListener('submit', (e) => {
    e.preventDefault();
-   if(values.includes(operation) && values.includes(input.value.charAt(input.value.length - 1))){
+   if(values.includes(operation) && operation !== '√' && values.includes(input.value.charAt(input.value.length - 1))){
       // Prevents to add a symbol twice through the buttons
          operation = undefined
          return 0;
    }
    document.querySelector('input').addEventListener('beforeinput', (e) => {
 
-      if(values.includes(e.data) && values.includes(input.value.charAt(input.value.length - 1))){
+      if(values.includes(e.data) && e.data !== '√' && values.includes(input.value.charAt(input.value.length - 1))){
          // Prevents to add a symbol twice through the input
          e.preventDefault()
       }
@@ -47,23 +47,20 @@ else if(operation === '.'){
    document.getElementById('1').value += operation
    operation = undefined
 }
-  // eqution must be declared at the end of the function
+  // equation must be declared at the end of the function
 let equation = input.value.split("") 
 console.log(equation.join(""))
 
 if (operation === '=') {
-   let parenth = 0
-   for (let i=0; i < equation.length; i++){
-      if (equation[i] === '('){
-         parenth++
-      } else if (equation[i] === ')'){
-         parenth--
-      }
-      if (equation[i] === '√'){
+
+   let parenth = num1.length
+   for (let i = equation.length; i >= 0 ; i--){
+      if(equation[i] === '√'){
          equation[i] = 'Math.sqrt('
+         equation.splice(parenth, 0, ')')
       }
-      if (i === equation.lenght  && parenth === 0){
-         equation.push(')')
+      if(values.includes(equation[i]) && equation !== '.' ){
+         parenth = i
       }
    }
    console.log(equation.join(""))

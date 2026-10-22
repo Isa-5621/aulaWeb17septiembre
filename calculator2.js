@@ -53,13 +53,13 @@ console.log(equation.join(""))
 
 if (operation === '=') {
 
-   let parenth = num1.length
+   let parenth = input.value.length
    for (let i = equation.length; i >= 0 ; i--){
       if(equation[i] === '√'){
          equation[i] = 'Math.sqrt('
          equation.splice(parenth, 0, ')')
       }
-      if(values.includes(equation[i]) && equation !== '.' ){
+      if(values.includes(equation[i])  && equation !== '.'){
          parenth = i
       }
    }
